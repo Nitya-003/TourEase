@@ -227,10 +227,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact & Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/tourease/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/tourease/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Suhani1234-5/TourEase/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Suhani1234-5/TourEase/discussions)
 -  **Linkedin**: [Linkedin](https://www.linkedin.com/in/suhani-garg-88a736318/)
-- **Discord**: [Join our community](https://discord.gg/tourease)
+
 
 ---
 
