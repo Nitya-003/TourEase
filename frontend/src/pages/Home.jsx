@@ -6,56 +6,112 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-teal-400 via-teal-500 to-cyan-600 text-white overflow-hidden min-h-screen flex items-center">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
+    <div className="min-h-screen bg-white font-sans">
+      {/* Hero Section */}
+      <div className="relative min-h-screen w-full bg-[#030712] overflow-hidden flex items-center py-12 lg:py-0">
+        
+        {/* Background Glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-teal-500/10 blur-[100px] rounded-full"></div>
+          <div className="absolute bottom-[-5%] right-[-5%] w-[40%] h-[40%] bg-orange-500/5 blur-[100px] rounded-full"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-          <div className="inline-block bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-6">
-            Explore the World!
-          </div>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full z-10">
+          {/* Grid Layout: Mobile par stacked (col), Desktop par side-by-side (row) */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* 1. LEFT SIDE: Content (Mobile par upar aayega) */}
+            <div className="space-y-6 text-left animate-in fade-in slide-in-from-left duration-700 order-1">
+              
+              {/* Badge */}
+              <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 backdrop-blur-xl px-4 py-1.5 rounded-full">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                </span>
+                <span className="text-orange-400 text-[10px] font-bold uppercase tracking-[0.2em]">Explore the World!</span>
+              </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your Smart Travel<br />Assistant Awaits
-          </h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+                Your Smart Travel<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-emerald-400 to-cyan-500">
+                  Assistant Awaits
+                </span>
+              </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl opacity-90">
-            Plan smarter, travel better! Whether you're exploring nearby or venturing abroad,
-            our intelligent assistant has everything covered — from itineraries to bookings,
-            all in one place.
-          </p>
+              <p className="text-base md:text-lg text-gray-400 max-w-md leading-relaxed font-medium">
+                Plan smarter, travel better! Whether you're exploring nearby or venturing abroad, 
+                our intelligent assistant has everything covered — from itineraries to bookings, 
+                all in one place.
+              </p>
 
-          <div className="flex flex-wrap gap-4 mb-12">
-            <Link
-              to="/signup"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-semibold transition text-lg"
-            >
-              Start Your Journey
-            </Link>
-            <button className="bg-white text-teal-600 hover:bg-gray-100 px-10 py-4 rounded-lg font-semibold transition text-lg">
-              Explore Features
-            </button>
-          </div>
+              {/* Buttons Section */}
+              <div className="flex flex-wrap gap-4">
+                <Link 
+                  to="/signup" 
+                  className="px-8 py-3.5 bg-orange-600 hover:bg-orange-500 text-white rounded-xl font-bold transition-all duration-300 shadow-lg shadow-orange-900/20 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
+                >
+                  Start Your Journey
+                </Link>
+                
+                <Link 
+                  to="/explore" 
+                  className="px-8 py-3.5 bg-white/5 border border-white/10 backdrop-blur-md text-white hover:bg-white/10 rounded-xl font-bold transition-all duration-300 active:scale-95 text-md flex items-center justify-center min-w-[180px]"
+                >
+                  Explore Features
+                </Link>
+              </div>
 
-          <div className="grid grid-cols-3 gap-8 max-w-3xl">
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
-              <div className="text-base opacity-80">Happy Travelers</div>
+              {/* Compact Stats */}
+              <div className="flex items-center gap-8 pt-4">
+                <div>
+                  <p className="text-3xl font-black text-white">50K<span className="text-orange-500">+</span></p>
+                  <p className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Adventurers</p>
+                </div>
+                <div className="h-8 w-[1px] bg-white/10"></div>
+                <div>
+                  <p className="text-3xl font-black text-white">150<span className="text-teal-400">+</span></p>
+                  <p className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Destinations</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">150+</div>
-              <div className="text-base opacity-80">Destinations</div>
+
+            {/* 2. RIGHT SIDE: Visual Image (Mobile par content ke niche aayega) */}
+            <div className="relative order-2 lg:order-2 w-full flex justify-center lg:justify-end">
+              <div className="relative z-20 animate-float-slow max-w-[420px] lg:max-w-[480px] w-full">
+                 <div className="rounded-[2.5rem] p-2 bg-white/5 border border-white/10 backdrop-blur-sm shadow-2xl overflow-hidden">
+                    <div className="rounded-[2rem] overflow-hidden relative group">
+                      <img 
+                        src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" 
+                        alt="Luxury Tourism" 
+                        className="w-full h-[300px] md:h-[380px] lg:h-[480px] object-cover transition-transform duration-[3s] group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/70 via-transparent to-transparent"></div>
+                      
+                      <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-xl px-4 py-2 rounded-2xl border border-white/20 shadow-xl">
+                         <div className="flex items-center gap-2">
+                            <span className="text-teal-400">✦</span>
+                            <p className="text-white text-[10px] font-bold uppercase tracking-wider">Top Rated Experience</p>
+                         </div>
+                      </div>
+                    </div>
+                 </div>
+              </div>
             </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
-              <div className="text-base opacity-80">Support</div>
-            </div>
+
           </div>
         </div>
+
+        <style>{`
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+          }
+          .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        `}</style>
       </div>
+    </div>
+
 
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -254,6 +310,7 @@ export default function Home() {
               <div className="text-3xl md:text-4xl font-bold mb-2">Free</div>
               <div className="text-base opacity-80">Forever Plan</div>
             </div>
+            
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold mb-2">5 Min</div>
               <div className="text-base opacity-80">Setup Time</div>
